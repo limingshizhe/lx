@@ -21,7 +21,7 @@
     if (touch.last) {
       touch.el.trigger('longTap')
       touch = {}
-    }
+    } 
   }
 
   function cancelLongTap() {
