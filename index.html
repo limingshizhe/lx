@@ -19,8 +19,12 @@
 	</body>
 	<script>
 		var i=0;
-		$('#box').on('swipeLeft',function(ev){
+		var box=document.getElementById('box')
+		box.addBehavior('touchstart',function(ev){
 			ev.preventDefault();
+		})
+		$('#box').on('swipeLeft',function(){
+			
 			i++;
 			if(i==$('#box div').length){
 				i=$('#box div').length-1;
@@ -28,8 +32,8 @@
 			$('#box').css('transform','translate3d(-'+i*innerWidth+'px,0,0)');
 		})
 		
-		$('#box').on('swipeRight',function(ev){
-			ev.preventDefault();
+		$('#box').on('swipeRight',function(){
+			
 			i--;
 			if(i==0){
 				i=0;
