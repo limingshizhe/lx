@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/a.css"/>
+		<script type="text/javascript" src="js/zepto.js" ></script>
+		<script type="text/javascript" src="js/touch.js" ></script>
+		
+		 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div>11</div>
+			<div>22</div>
+			<div>33</div>
+			<div>44</div>
+		</div>
+	</body>
+	<script>
+		var i=0;
+		$('#box').on('swipeLeft',function(ev){
+			ev.preventDefault();
+			i++;
+			if(i==$('#box div').length){
+				i=$('#box div').length-1;
+			}
+			$('#box').css('transform','translate3d(-'+i*innerWidth+'px,0,0)');
+		})
+		
+		$('#box').on('swipeRight',function(ev){
+			ev.preventDefault();
+			i--;
+			if(i==0){
+				i=0;
+			}
+			$('#box').css('transform','translate3d(-'+i*innerWidth+'px,0,0)');
+		})
+		
+		
+	</script>
+</html>
